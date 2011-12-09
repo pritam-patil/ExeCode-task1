@@ -1,1 +1,6 @@
-The task is implemented in python to compile and run a Java class and send the results back to client.
+  The task is implemented in python to compile and run a Java class and send the results back to client.
+How to run the task ?
+-Run the server file using 'Python app.py' command.
+-Ping to 'localhost:5000/home' in your browser.
+-Enter the Java code and Run it.
+	That's it !!!
