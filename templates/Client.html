@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>The Request Page</title>
+<script type="text/javascript">
+
+function showHint(input)
+{
+var xmlhttp;
+
+xmlhttp=new XMLHttpRequest();
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+
+    document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+    }
+  }
+
+x= "http://localhost:5000/xhr/"+input;
+
+try
+  {
+xmlhttp.open("GET",x,true); 
+   xmlhttp.send();
+  }
+catch(err)
+  {
+  alert(err);
+  //Handle errors here
+  }
+
+}
+
+</script>
+</head>
+<body>
+
+<h3>Hi, there!</h3>
+
+<form action=""> 
+Code : <textarea name="text" id="txt1" /></textarea>
+<input type="button" onclick="showHint(this.form.txt1.value)" value="Run"/>
+</form>
+<br/>
+Output: <textarea id="txtHint" name="output" ></textarea> 
+
+</body>
+</html>
